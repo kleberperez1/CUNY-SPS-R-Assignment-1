@@ -1,0 +1,223 @@
+
+#TOC {
+  background: url("https://www.rstudio.com/wp-content/uploads/2016/09/RStudio-Logo-Blue-Gray-125.png");
+  background-size: auto;  
+  background-position: center top;
+  padding-top: 70px !important;
+  padding-bottom: 20px !important;
+  background-repeat: no-repeat;
+}
+
+  /* #header {  */
+    /* position: relative; */
+    /* background: #2274cc; /* Old browsers */ */
+    /* background: -moz-linear-gradient(left, #2274cc 0%, #26c5d3 36%, #61bf61 100%); /* FF3.6-15 */ */
+    /* background: -webkit-linear-gradient(left, #2274cc 0%,#26c5d3 36%,#61bf61 100%); /* Chrome10-25,Safari5.1-6 */ */
+    /* background: linear-gradient(to right, #2274cc 0%,#26c5d3 36%,#61bf61 100%); /* W3C, IE10+, FF16+, Chrome26+,  Opera12+, Safari7+ */ */
+    /* filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2274cc', endColorstr='#61bf61',GradientType=1 ); /* IE6-9 */ */
+    /* color: white; */
+    /* height: 100px; */
+    /* display:flex; */
+    /* align-items: center; */
+    /* justify-content: center; */
+  /* } */
+
+  /* h1.title { */
+    /* margin: auto; */
+  /* } */
+
+  
+  
+#nav_logo {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.navbar {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+}
+
+.navbar > .container,
+.navbar > .container-fluid {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.navbar-brand {
+  display: inline-block;
+  padding-top: 0.3125rem;
+  padding-bottom: 0.3125rem;
+  margin-right: 1rem;
+  font-size: 1.25rem;
+  line-height: inherit;
+  white-space: nowrap;
+}
+
+.navbar-brand:hover, .navbar-brand:focus {
+  text-decoration: none;
+}
+
+.navbar-nav {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.navbar-nav .nav-link {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.navbar-nav .dropdown-menu {
+  position: static;
+  float: none;
+}
+
+.navbar-text {
+  display: inline-block;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.navbar-collapse {
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.navbar-toggler {
+  padding: 0.25rem 0.75rem;
+  font-size: 1.25rem;
+  line-height: 1;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+}
+
+.navbar-toggler:hover, .navbar-toggler:focus {
+  text-decoration: none;
+}
+
+.navbar-toggler:not(:disabled):not(.disabled) {
+  cursor: pointer;
+}
+
+.navbar-toggler-icon {
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  vertical-align: middle;
+  content: "";
+  background: no-repeat center center;
+  background-size: 100% 100%;
+}
+
+
+
+.container {
+  min-width: 992px !important;
+}
+  
+.border-top {
+  border-top: 1px solid #dee2e6 !important;
+}
+
+.text-muted {
+  color: #6c757d !important;
+}
+
+.fixed-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
+
+.fixed-bottom {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1030;
+}
+
+.text-left {
+  text-align: left !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+@supports ((position: -webkit-sticky) or (position: sticky)) {
+  .sticky-top {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+  }
+}
+
+.text-primary {
+  color: #007bff !important;
+}
+
+a.text-primary:hover, a.text-primary:focus {
+  color: #0062cc !important;
+}
+
+.text-secondary {
+  color: #6c757d !important;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+.img-thumbnail {
+  padding: 0.25rem;
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+  border-radius: 0.25rem;
+  max-width: 100%;
+  height: auto;
+}
+
+/* .one-edge-shadow { */
+    /* -webkit-box-shadow: 0 8px 6px -6px black; */
+       /* -moz-box-shadow: 0 8px 6px -6px black; */
+            /* box-shadow: 0 8px 6px -6px black; */
+/* } */
+
+
+
+
+

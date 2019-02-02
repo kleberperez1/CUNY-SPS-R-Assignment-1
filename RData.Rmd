@@ -1,0 +1,160 @@
+---
+title: "R Assignment #1"
+author: "[Kleber Perez - `r format(Sys.Date(), '%B %d, %Y')`](https://www.linkedin.com/in/kleberperez/)" 
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    code_folding: show
+    css: styles.css
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(readr)
+library(ggplot2)
+```
+
+
+# <span style="color:#9f0a0a">Mushrooms Data</span>
+
+<br />
+
+> The Mushrooms data is a well-known dataset in the data science community makes it a good dataset to use for comparative benchmarking.  For example, if someone was working to build a better decision tree algorithm (or other predictive classifier) to analyze categorical data, this dataset could be useful. (https://archive.ics.uci.edu/ml/datasets/Mushroom)
+
+> *Display original dataset columns.*
+
+```{r}
+mushrooms <- read_csv("https://archive.ics.uci.edu/ml/machine-learning-databases/mushroom/agaricus-lepiota.data")
+```
+
+<br />
+
+> **1. Use the summary function to gain an overview of the data set. Then display attributes.**
+
+```{r}
+summary(mushrooms)
+```
+
+<br />
+
+## <span style="color:#9f0a0a">Subsetting Data</span>
+
+<br />
+
+> **2. Create a new data frame with a subset of the columns**
+
+```{r}
+subsetMushrooms <- mushrooms[c(1, 2, 3:4)]
+```
+
+<br />
+
+> **3. Create new column names for the new data frame.**
+
+```{r}
+colnames(subsetMushrooms) <- c("class", "bruises", "gill-size", "habitat")
+DT::datatable(subsetMushrooms, options = list(pageLength = 10))
+```
+
+<br />
+
+> **4. Use the summary function to create an overview of your new data frame and print attributes.**
+
+```{r}
+summary(subsetMushrooms)
+```
+
+<br />
+
+> **5. 4.	Replace abbreviation with meaningful names (i.e.;  e = edible)**
+
+```{r}
+#newdata <- subset(SubsetMush, class >= "e" & Class <= "p")
+newdata <- subset(subsetMushrooms, class == "e" | class <= "p")
+newdata [newdata == "e"] <- "Edible"
+newdata [newdata == "p"] <- "Poisonous"
+```
+
+<br />
+
+
+> **6. See examples of all of steps 1-5 above.**
+
+```{r}
+DT::datatable(newdata, options = list(pageLength = 10))  
+```
+
+<br />
+
+## <span style="color:#9f0a0a">Plotting </span>
+
+
+```{r}
+library(tidyverse)
+#library(ggplot2)
+#library(dplyr)
+#factorMushrooms <- mushrooms[c(1, 3, 9, 23)]
+#factorMushrooms <- read_csv("https://archive.ics.uci.edu/ml/machine-learning-databases/mushroom/agaricus-lepiota.data")
+
+subsetMushrooms <- mushrooms[c(1, 3, 9, 23)]
+colnames(subsetMushrooms) <- c("class", "capsurface", "gillsize", "habitat")
+
+summary(subsetMushrooms)
+
+subsetMushrooms <- subsetMushrooms %>%
+  mutate(class=as.factor(class), capsurface=as.factor(capsurface), 
+         gillsize=as.factor(gillsize), habitat=as.factor(habitat))
+  #mutate(class=factor(class), habitat=factor(habitat))
+#unique(factorMushrooms$class)
+
+summary(subsetMushrooms)
+levels(subsetMushrooms$class)
+levels(subsetMushrooms$capsurface)
+levels(subsetMushrooms$gillsize)
+levels(subsetMushrooms$habitat)
+
+# Set up factors
+#df <- data.frame(a = factorMushrooms$class, factorMushrooms$bruises)
+
+ggplot(data = subsetMushrooms) + 
+  geom_point(mapping = aes(x=class, y=habitat))
+
+```
+
+
+```{r}
+#subsetMushrooms <- subsetMushrooms[c(1, 3, 9, 23)]
+
+require(data.table) 
+counts<-data.frame(table(subsetMushrooms))
+DT::datatable(counts, options = list(pageLength = 10))  
+
+plot(subsetMushrooms)
+plot(counts$class,counts$capsurface)
+
+```
+
+
+<br />
+
+> *Please email to: * <a href="mailto:kleber.perez@live.com">kleber.perez@live.com</a> *for any suggestion.*
+
+<br />
+<br />
+<br />
+<br />
+
+<footer class="border-top text-muted fixed-bottom">
+
+        ** R Assignment #1 - MSDS 2019 Program.
+
+</footer>
+
+\textbf{Text ignored: END of other links}
+
+
+
